@@ -1,16 +1,23 @@
-import React from 'react'
-import './App.css'
-import {Chatbot } from 'react-chatbot-kit'
+import React from "react";
+import Chatbot from "react-chatbot-kit";
 
-const App = () => {
+import './App.css'
+
+import ActionProvider from './ActionProvider'
+import config from './config'
+import MessageParser from './MessageParser'
+//imports are provided above this line.
+
+function App() {
   return (
     <div className="App">
-      K{30000}
-      <div className="bg">
-        <Chatbot />
-      </div>
+      <Chatbot
+        config={config}
+        messageParser={MessageParser}
+        actionProvider={ActionProvider}
+      />
     </div>
   );
 }
 
-export default App
+export default App;
